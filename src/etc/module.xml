@@ -3,6 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="IntegerNet_EnableSwagger">
         <sequence>
+            <module name="Magento_Swagger"/>
         </sequence>
     </module>
 </config>

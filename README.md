@@ -3,17 +3,11 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-![Supported Magento Versions][ico-compatibility]
-
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Maintainability][ico-maintainability]][link-maintainability]
 </div>
 
 ---
 
-Adds the option to re-enable Swagger via configuration. It's disabled in production mode sind Magento 2.4.4. 
+Adds the option to re-enable Swagger via configuration. It's disabled in production mode since Magento 2.4.4. 
 
 ## Installation
 
@@ -29,7 +23,17 @@ Adds the option to re-enable Swagger via configuration. It's disabled in product
 
 ## Configuration
 
-## Usage
+Enable swagger for your environment:
+
+    bin/magento config:set --lock-env dev/swagger/active 1
+
+We recommend using the `--lock-env` switch so this configuration doesn't get lost when importing a database dump.
+
+We recommend to not enable Swagger if there are no other access restrictions in place. These can be:
+
+- Required VPN
+- Basic Auth
+- Access restricted to predefined IPs
 
 ## Changelog
 
@@ -39,29 +43,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Testing
-
-### Unit Tests
-
-```
-./vendor/bin/phpunit tests/unit
-```
-
-### Magento Integration Tests
-
-0. Configure test database in `dev/tests/integration/etc/install-config-mysql.php`. [Read more in the Magento docs.](https://devdocs.magento.com/guides/v2.4/test/integration/integration_test_execution.html) 
-
-1. Copy `tests/integration/phpunit.xml.dist` from the package to `dev/tests/integration/phpunit.xml` in your Magento installation.
-
-2. In that directory, run
-    ``` bash
-    ../../../vendor/bin/phpunit
-    ```
-
-
 ## Security
 
-If you discover any security related issues, please email avs@integer-net.de instead of using the issue tracker.
+If you discover any security related issues, please email security@integer-net.de instead of using the issue tracker.
 
 ## Credits
 
